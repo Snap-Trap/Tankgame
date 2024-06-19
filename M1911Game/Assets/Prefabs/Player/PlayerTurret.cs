@@ -7,6 +7,7 @@ public class PlayerTurret : MonoBehaviour
 {
     // InputAction for the turret so it can read the input
     public InputAction TurretInput;
+    public InputAction ShootInput;
     private Vector2 turretX;
 
 
@@ -15,13 +16,19 @@ public class PlayerTurret : MonoBehaviour
 
     // public variables to find an object;
     public GameObject turretObject;
+    public GameObject shellPrefab;
 
     // Other script variables
     public PlayerMovement playerMovement;
 
     // Normal variables
     public float turretSpeed;
+    public float shellSpeed;
+
     public bool isMoving = false;
+    public bool canShoot = true;
+
+    public Transform firePoint;
 
     void Start()
     { 
@@ -55,18 +62,36 @@ public class PlayerTurret : MonoBehaviour
             TurretRotation = turretX = TurretInput.ReadValue<Vector2>();
             turretObject.transform.Rotate (Vector3.up, (turretX.x * turretSpeed));
 
+            if (ShootInput.triggered && canShoot)
+            {
+                // Quaternion forwardRotation = Quaternion.Euler(0, 0, 0);
+                GameObject ShellInstance = Instantiate(shellPrefab, firePoint.position, firePoint.rotation);
 
-
+                // Apply force to the bullet for movement
+                ShellInstance.GetComponent<Rigidbody>().AddForce(ShellInstance.transform.forward * shellSpeed, ForceMode.Impulse);
+                canShoot = false;
+                ShootCooldown();
+            }
         }
+    }
+
+    // make something so there is cooldown for shooting
+
+    IEnumerable ShootCooldown()
+    {
+        yield return new WaitForSeconds(2);
+        canShoot = true;
     }
 
     void OnEnable()
     {
+        ShootInput.Enable();
         TurretInput.Enable();
     }
 
     void OnDisable()
     {
+        ShootInput.Disable();
         TurretInput.Disable();
     }
 }
