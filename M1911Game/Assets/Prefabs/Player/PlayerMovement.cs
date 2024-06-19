@@ -36,9 +36,6 @@ public class PlayerMovement : MonoBehaviour
         CurrentHeight = movementY = playerInput.ReadValue<Vector3>().y;
         CurrentSpeed = movementZ = playerInput.ReadValue<Vector3>().z;
 
-        
-
-
         Vector3 movement = new Vector3(movementX, movementY, movementZ);
         rb.velocity = transform.forward * (movementZ * extraSpeed);
         transform.Rotate(Vector3.up, movementX * rotationSpeed);
