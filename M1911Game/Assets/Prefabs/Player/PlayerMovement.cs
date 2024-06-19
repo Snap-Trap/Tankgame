@@ -8,16 +8,18 @@ public class PlayerMovement : MonoBehaviour
 
     //Variables for the player movement so it can read the input
     public InputAction playerInput;
-    public float movementX;
-    public float movementY;
-    public float movementZ;
+    private float movementX;
+    private float movementY;
+    private float movementZ;
 
     //Variable for better overview of the numbers I want to see
     public float CurrentSpeed;
-    public float rotationSpeed =0.1f;
+    public float CurrentRotation;
+    public float CurrentHeight;
 
     //small adjustment for speed
     public float extraSpeed;
+    public float rotationSpeed = 0.1f;
 
 
     private Rigidbody rb;
@@ -30,13 +32,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        movementX = playerInput.ReadValue<Vector3>().x;
-        movementY = playerInput.ReadValue<Vector3>().y;
-        movementZ = playerInput.ReadValue<Vector3>().z;
+        CurrentRotation = movementX = playerInput.ReadValue<Vector3>().x;
+        CurrentHeight = movementY = playerInput.ReadValue<Vector3>().y;
+        CurrentSpeed = movementZ = playerInput.ReadValue<Vector3>().z;
+
+        
 
 
         Vector3 movement = new Vector3(movementX, movementY, movementZ);
-        rb.velocity = transform.forward * (movementZ);
+        rb.velocity = transform.forward * (movementZ * extraSpeed);
         transform.Rotate(Vector3.up, movementX * rotationSpeed);
 
         //movementZ = CurrentSpeed;
