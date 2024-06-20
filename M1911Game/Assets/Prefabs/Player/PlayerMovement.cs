@@ -41,8 +41,6 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(Vector3.up, movementX * rotationSpeed);
 
         //movementZ = CurrentSpeed;
-
-
     }
 
     void OnEnable()
