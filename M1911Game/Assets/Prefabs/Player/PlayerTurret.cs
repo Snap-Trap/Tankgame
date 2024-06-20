@@ -69,15 +69,16 @@ public class PlayerTurret : MonoBehaviour
 
                 // Apply force to the bullet for movement
                 ShellInstance.GetComponent<Rigidbody>().AddForce(ShellInstance.transform.forward * shellSpeed, ForceMode.Impulse);
+
                 canShoot = false;
-                ShootCooldown();
+                StartCoroutine(ShootCooldown());
             }
         }
     }
 
     // make something so there is cooldown for shooting
 
-    IEnumerable ShootCooldown()
+    IEnumerator ShootCooldown()
     {
         yield return new WaitForSeconds(2);
         canShoot = true;
