@@ -31,10 +31,11 @@ public class PlayerTurret : MonoBehaviour
     public Transform firePoint;
 
     void Start()
-    { 
+    {
         //Make sure the turret is found, the turret is a child of a child of the player
         // Ok so first shit didn't work use GameObject for christ sake
-        turretObject = GameObject.Find("Turret");
+        //turretObject = GameObject.Find("GreenTurret");
+
         if (turretObject == null)
         {
             Debug.LogError("Turret not found");
@@ -58,9 +59,13 @@ public class PlayerTurret : MonoBehaviour
 
         if (isMoving == false)
         {
-            // Make the turret rotate to either left or right
-            TurretRotation = turretX = TurretInput.ReadValue<Vector2>();
-            turretObject.transform.Rotate (Vector3.up, (turretX.x * turretSpeed));
+            if (TurretInput.ReadValue<Vector2>() != Vector2.zero)
+            {
+                Debug.Log(gameObject.name);
+                // Make the turret rotate to either left or right
+                TurretRotation = turretX = TurretInput.ReadValue<Vector2>();
+                turretObject.transform.Rotate(Vector3.up, (turretX.x * turretSpeed));
+            }
 
             if (ShootInput.triggered && canShoot)
             {

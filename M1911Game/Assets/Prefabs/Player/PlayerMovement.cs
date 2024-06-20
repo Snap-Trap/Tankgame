@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float extraSpeed;
     public float rotationSpeed = 0.1f;
 
-
+    //Normal variables for stuff
     private Rigidbody rb;
 
 

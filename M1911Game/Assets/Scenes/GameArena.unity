@@ -881,6 +881,14 @@ PrefabInstance:
       propertyPath: playerInput.m_SingletonActionBindings.Array.data[6].m_Path
       value: <Keyboard>/numpad2
       objectReference: {fileID: 0}
+    - target: {fileID: 2805925684636305136, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
+      propertyPath: m_Name
+      value: GreenTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805925684636305136, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
     - target: {fileID: 4339736559023042764, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -916,6 +924,10 @@ PrefabInstance:
     - target: {fileID: 6286898419579297472, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: m_Name
       value: TankGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286898419579297472, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
+      propertyPath: m_TagString
+      value: Tank
       objectReference: {fileID: 0}
     - target: {fileID: 6314454293573210656, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4141,6 +4153,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2805925684636305136, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
+      propertyPath: m_Name
+      value: PinkTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805925684636305136, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
     - target: {fileID: 6253725857601813986, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: shellSpeed
       value: 45
@@ -4164,6 +4184,10 @@ PrefabInstance:
     - target: {fileID: 6286898419579297472, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: m_Name
       value: TankPink
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286898419579297472, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
+      propertyPath: m_TagString
+      value: Tank
       objectReference: {fileID: 0}
     - target: {fileID: 6314454293573210656, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9834,8 +9858,8 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1853638813}
   - {fileID: 398061643}
   - {fileID: 1149995845}
   - {fileID: 141649821}
   - {fileID: 116112002}
+  - {fileID: 1853638813}
