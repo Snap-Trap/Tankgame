@@ -879,7 +879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2041657703898891907, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: playerInput.m_SingletonActionBindings.Array.data[6].m_Path
-      value: <Keyboard>/numpad2
+      value: <Keyboard>/numpad5
       objectReference: {fileID: 0}
     - target: {fileID: 2805925684636305136, guid: c2f4b322f34a42546ab57f59e089e062, type: 3}
       propertyPath: m_Name
